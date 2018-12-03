@@ -38,6 +38,8 @@ public class Testing extends javax.swing.JDialog {
     private Map<String, Collection<String>> cricketLinks;
     private Map<String, Collection<String>> ncaabbLinks;
     private Map<String, Collection<String>> rugbyLinks;
+    
+    private DefaultListModel listModel = new DefaultListModel();
    
     /**
      * Creates new form Testing
@@ -138,11 +140,14 @@ public class Testing extends javax.swing.JDialog {
                     this.soccer = new Links(url);
                     this.soccerLinks = soccer.getFinalLinks();
                     if(!soccerLinks.isEmpty()){
+                        this.listModel.clear();
                         for (Map.Entry<String, Collection<String>> entry : this.soccerLinks.entrySet()){
                             comboSoccer.addItem(entry.getKey());
                         }
+                        openSoccer.setEnabled(true);
                     }else{
                         comboSoccer.addItem("There are no games available!");
+                        this.listModel.clear();
                         openSoccer.setEnabled(false);
                     }
                 }   break;
@@ -151,11 +156,14 @@ public class Testing extends javax.swing.JDialog {
                     this.nba = new Links(url);
                     this.nbaLinks = nba.getFinalLinks();
                     if(!nbaLinks.isEmpty()){
+                        this.listModel.clear();
                         for (Map.Entry<String, Collection<String>> entry : this.nbaLinks.entrySet()){
                             comboNBA.addItem(entry.getKey());
                         }
+                        openNBA.setEnabled(true);
                     }else{
                         comboNBA.addItem("There are no games available!");
+                        this.listModel.clear();
                         openNBA.setEnabled(false);
                     }
                 }   break;
@@ -164,11 +172,14 @@ public class Testing extends javax.swing.JDialog {
                     this.nfl = new Links(url);
                     this.nflLinks = nfl.getFinalLinks();
                     if(!nflLinks.isEmpty()){
+                        this.listModel.clear();
                         for (Map.Entry<String, Collection<String>> entry : this.nflLinks.entrySet()){
                             comboNFL.addItem(entry.getKey());
                         }
+                        openNFL.setEnabled(true);
                     }else{
                         comboNFL.addItem("There are no games available!");
+                        this.listModel.clear();
                         openNFL.setEnabled(false);
                     }
                     
@@ -178,11 +189,14 @@ public class Testing extends javax.swing.JDialog {
                     this.mma = new Links(url);
                     this.mmaLinks = mma.getFinalLinks();
                     if(!mmaLinks.isEmpty()){
+                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.mmaLinks.entrySet()){
                             comboMMA.addItem(entry.getKey());
-                        } 
+                        }
+                       openMMA.setEnabled(true);
                     }else{
                         comboMMA.addItem("There are no games available!");
+                        this.listModel.clear();
                         openMMA.setEnabled(false);
                     }
                 }
@@ -193,11 +207,14 @@ public class Testing extends javax.swing.JDialog {
                     this.nhl = new Links(url);
                     this.nhlLinks = nhl.getFinalLinks();
                     if(!nhlLinks.isEmpty()){
+                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.nhlLinks.entrySet()){
                             comboNHL.addItem(entry.getKey());
-                        } 
+                        }
+                       openNHL.setEnabled(true);
                     }else{
                         comboNHL.addItem("There are no games available!");
+                        this.listModel.clear();
                         openNHL.setEnabled(false);
                     }
                 }
@@ -207,11 +224,14 @@ public class Testing extends javax.swing.JDialog {
                     this.cricket = new Links(url);
                     this.cricketLinks = cricket.getFinalLinks();
                     if(!cricketLinks.isEmpty()){
+                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.cricketLinks.entrySet()){
                             comboCricket.addItem(entry.getKey());
-                        } 
+                        }
+                       openCricket.setEnabled(true);
                     }else{
                         comboCricket.addItem("There are no games available!");
+                        this.listModel.clear();
                         openCricket.setEnabled(false);
                     }
                 }
@@ -221,11 +241,14 @@ public class Testing extends javax.swing.JDialog {
                     this.ncaabb = new Links(url);
                     this.ncaabbLinks = ncaabb.getFinalLinks();
                     if(!ncaabbLinks.isEmpty()){
+                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.ncaabbLinks.entrySet()){
                             comboNCAABB.addItem(entry.getKey());
                         } 
+                       openNCAABB.setEnabled(true);
                     }else{
                         comboNCAABB.addItem("There are no games available!");
+                        this.listModel.clear();
                         openNCAABB.setEnabled(false);
                     }
                 }
@@ -235,11 +258,14 @@ public class Testing extends javax.swing.JDialog {
                     this.rugby = new Links(url);
                     this.rugbyLinks = rugby.getFinalLinks();
                     if(!rugbyLinks.isEmpty()){
+                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.rugbyLinks.entrySet()){
                             comboRugby.addItem(entry.getKey());
                         } 
+                       openRugby.setEnabled(true);
                     }else{
                         comboRugby.addItem("There are no games available!");
+                        this.listModel.clear();
                         openRugby.setEnabled(false);
                     }
                 }
@@ -805,7 +831,8 @@ public class Testing extends javax.swing.JDialog {
         if(!soccerLinks.isEmpty() && this.soccer != null){
             String game = (String)comboSoccer.getSelectedItem();
             Collection<String>  gameLinks = soccerLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+            //DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -885,7 +912,8 @@ public class Testing extends javax.swing.JDialog {
         if(!nbaLinks.isEmpty() && this.nba != null){
             String game = (String)comboNBA.getSelectedItem();
             Collection<String>  gameLinks = nbaLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+//            DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -918,7 +946,8 @@ public class Testing extends javax.swing.JDialog {
         if(!nflLinks.isEmpty() && this.nfl != null){
             String game = (String)comboNFL.getSelectedItem();
             Collection<String>  gameLinks = nflLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
+            //DefaultListModel listModel = new DefaultListModel();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -951,7 +980,7 @@ public class Testing extends javax.swing.JDialog {
         if(!mmaLinks.isEmpty() && this.mma != null){
             String game = (String)comboMMA.getSelectedItem();
             Collection<String>  gameLinks = mmaLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -984,7 +1013,8 @@ public class Testing extends javax.swing.JDialog {
         if(!nhlLinks.isEmpty() && this.nhl != null){
             String game = (String)comboNHL.getSelectedItem();
             Collection<String>  gameLinks = nhlLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+//            DefaultListModel listModel = new DefaultListModel();
+              this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -996,7 +1026,8 @@ public class Testing extends javax.swing.JDialog {
         if(!cricketLinks.isEmpty() && this.cricket != null){
             String game = (String)comboCricket.getSelectedItem();
             Collection<String>  gameLinks = cricketLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+            //DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -1029,7 +1060,8 @@ public class Testing extends javax.swing.JDialog {
         if(!ncaabbLinks.isEmpty() && this.ncaabb != null){
             String game = (String)comboNCAABB.getSelectedItem();
             Collection<String>  gameLinks = ncaabbLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+            //DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
@@ -1062,7 +1094,8 @@ public class Testing extends javax.swing.JDialog {
         if(!rugbyLinks.isEmpty() && this.rugby != null){
             String game = (String)comboRugby.getSelectedItem();
             Collection<String>  gameLinks = rugbyLinks.get(game);
-            DefaultListModel listModel = new DefaultListModel();
+            //DefaultListModel listModel = new DefaultListModel();
+            this.listModel.clear();
             for(String s : gameLinks){
                 listModel.addElement(s);
             }
