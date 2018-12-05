@@ -39,8 +39,15 @@ public class Testing extends javax.swing.JDialog {
     private Map<String, Collection<String>> ncaabbLinks;
     private Map<String, Collection<String>> rugbyLinks;
     
-    private DefaultListModel listModel = new DefaultListModel();
-   
+    private DefaultListModel soccerModel = new DefaultListModel();;
+    private DefaultListModel nbaModel = new DefaultListModel();;
+    private DefaultListModel nflModel = new DefaultListModel();;
+    private DefaultListModel mmaModel = new DefaultListModel();;
+    private DefaultListModel nhlModel = new DefaultListModel();;
+    private DefaultListModel cricketModel = new DefaultListModel();;
+    private DefaultListModel ncaabbModel = new DefaultListModel();;
+    private DefaultListModel rugbyModel = new DefaultListModel();;
+  
     /**
      * Creates new form Testing
      * @param parent
@@ -77,6 +84,13 @@ public class Testing extends javax.swing.JDialog {
                     comboSoccer.setEditable(false);
                     comboSoccer.removeAllItems();
                     setLinks(tab, url);
+                    String game = (String)comboSoccer.getSelectedItem();
+                    Collection<String>  gameLinks = soccerLinks.get(game);
+                    soccerModel.clear();
+                    for(String s : gameLinks){
+                        soccerModel.addElement(s);
+                    }
+                    listSoccer.setModel(soccerModel);
                     break;
                 case 1 : 
                     Testing.this.nba = null;
@@ -84,6 +98,13 @@ public class Testing extends javax.swing.JDialog {
                     comboNBA.setEditable(false);
                     comboNBA.removeAllItems();
                     setLinks(tab, url);
+                    String nbagame = (String)comboNBA.getSelectedItem();
+                    Collection<String>  nbagameLinks = nbaLinks.get(nbagame);
+                    nbaModel.clear();
+                    for(String s : nbagameLinks){
+                        nbaModel.addElement(s);
+                    }
+                    listNBA.setModel(nbaModel);
                     break;
                 case 2 :
                     Testing.this.nfl = null;
@@ -91,6 +112,13 @@ public class Testing extends javax.swing.JDialog {
                     comboNFL.setEditable(false);
                     comboNFL.removeAllItems();
                     setLinks(tab, url);
+                    String nflgame = (String)comboNFL.getSelectedItem();
+                    Collection<String>  nflgameLinks = nflLinks.get(nflgame);
+                    nflModel.clear();
+                    for(String s : nflgameLinks){
+                        nflModel.addElement(s);
+                    }
+                    listNFL.setModel(nflModel);
                     break;
                 case 3 :
                     Testing.this.mma = null;
@@ -98,30 +126,70 @@ public class Testing extends javax.swing.JDialog {
                     comboMMA.setEditable(false);
                     comboMMA.removeAllItems();
                     setLinks(tab, url);
+                    String mmagame = (String)comboMMA.getSelectedItem();
+                    Collection<String>  mmagameLinks = mmaLinks.get(mmagame);
+                    mmaModel.clear();
+                    for(String s : mmagameLinks){
+                        mmaModel.addElement(s);
+                    }
+                    listMMA.setModel(mmaModel);
+                    break;
                 case 4 :
                     Testing.this.nhl = null;
                     url = "https://www.reddit.com/r/NHLStreams";
                     comboNHL.setEditable(false);
                     comboNHL.removeAllItems();
                     setLinks(tab, url);
+                    String nhlgame = (String)comboNHL.getSelectedItem();
+                    Collection<String>  nhlgameLinks = nhlLinks.get(nhlgame);
+                    nhlModel.clear();
+                    for(String s : nhlgameLinks){
+                        nhlModel.addElement(s);
+                    }
+                    listNHL.setModel(nhlModel);
+                    break;
                 case 5 :
                     Testing.this.cricket = null;
                     url = "https://www.reddit.com/r/CricketStreams";
                     comboCricket.setEditable(false);
                     comboCricket.removeAllItems();
                     setLinks(tab, url);
+                    String cricketgame = (String)comboCricket.getSelectedItem();
+                    Collection<String> cricketgameLinks = cricketLinks.get(cricketgame);
+                    cricketModel.clear();
+                    for(String s : cricketgameLinks){
+                        cricketModel.addElement(s);
+                    }
+                    listCricket.setModel(cricketModel);
+                    break;
                 case 6 :
                     Testing.this.ncaabb = null;
                     url = "https://www.reddit.com/r/ncaaBBallStreams/";
                     comboNCAABB.setEditable(false);
                     comboNCAABB.removeAllItems();
                     setLinks(tab, url);
+                    String ncaabbgame = (String)comboNCAABB.getSelectedItem();
+                    Collection<String> ncaabbgameLinks = ncaabbLinks.get(ncaabbgame);
+                    ncaabbModel.clear();
+                    for(String s : ncaabbgameLinks){
+                        ncaabbModel.addElement(s);
+                    }
+                    listNCAABB.setModel(ncaabbModel);
+                    break;
                 case 7 :
                     Testing.this.rugby = null;
                     url = "https://www.reddit.com/r/rugbystreams/";
                     comboRugby.setEditable(false);
                     comboRugby.removeAllItems();
                     setLinks(tab, url);
+                    String rugbygame = (String)comboRugby.getSelectedItem();
+                    Collection<String> rugbygameLinks = rugbyLinks.get(rugbygame);
+                    rugbyModel.clear();
+                    for(String s : rugbygameLinks){
+                        rugbyModel.addElement(s);
+                    }
+                    listRugby.setModel(rugbyModel);
+                    break;
                 default:
                     Testing.this.soccer = null;
                     url = "https://www.reddit.com/r/soccerstreams/";
@@ -140,14 +208,13 @@ public class Testing extends javax.swing.JDialog {
                     this.soccer = new Links(url);
                     this.soccerLinks = soccer.getFinalLinks();
                     if(!soccerLinks.isEmpty()){
-                        this.listModel.clear();
                         for (Map.Entry<String, Collection<String>> entry : this.soccerLinks.entrySet()){
                             comboSoccer.addItem(entry.getKey());
                         }
                         openSoccer.setEnabled(true);
-                    }else{
+                        comboSoccer.setSelectedIndex(0);
+                   }else{
                         comboSoccer.addItem("There are no games available!");
-                        this.listModel.clear();
                         openSoccer.setEnabled(false);
                     }
                 }   break;
@@ -156,14 +223,13 @@ public class Testing extends javax.swing.JDialog {
                     this.nba = new Links(url);
                     this.nbaLinks = nba.getFinalLinks();
                     if(!nbaLinks.isEmpty()){
-                        this.listModel.clear();
                         for (Map.Entry<String, Collection<String>> entry : this.nbaLinks.entrySet()){
                             comboNBA.addItem(entry.getKey());
                         }
                         openNBA.setEnabled(true);
+                        comboNBA.setSelectedIndex(0);
                     }else{
                         comboNBA.addItem("There are no games available!");
-                        this.listModel.clear();
                         openNBA.setEnabled(false);
                     }
                 }   break;
@@ -172,14 +238,13 @@ public class Testing extends javax.swing.JDialog {
                     this.nfl = new Links(url);
                     this.nflLinks = nfl.getFinalLinks();
                     if(!nflLinks.isEmpty()){
-                        this.listModel.clear();
                         for (Map.Entry<String, Collection<String>> entry : this.nflLinks.entrySet()){
                             comboNFL.addItem(entry.getKey());
                         }
                         openNFL.setEnabled(true);
+                        comboNFL.setSelectedIndex(0);
                     }else{
                         comboNFL.addItem("There are no games available!");
-                        this.listModel.clear();
                         openNFL.setEnabled(false);
                     }
                     
@@ -189,14 +254,13 @@ public class Testing extends javax.swing.JDialog {
                     this.mma = new Links(url);
                     this.mmaLinks = mma.getFinalLinks();
                     if(!mmaLinks.isEmpty()){
-                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.mmaLinks.entrySet()){
                             comboMMA.addItem(entry.getKey());
                         }
                        openMMA.setEnabled(true);
+                       comboMMA.setSelectedIndex(0);
                     }else{
                         comboMMA.addItem("There are no games available!");
-                        this.listModel.clear();
                         openMMA.setEnabled(false);
                     }
                 }
@@ -207,14 +271,13 @@ public class Testing extends javax.swing.JDialog {
                     this.nhl = new Links(url);
                     this.nhlLinks = nhl.getFinalLinks();
                     if(!nhlLinks.isEmpty()){
-                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.nhlLinks.entrySet()){
                             comboNHL.addItem(entry.getKey());
                         }
                        openNHL.setEnabled(true);
+                       comboNHL.setSelectedIndex(0);
                     }else{
                         comboNHL.addItem("There are no games available!");
-                        this.listModel.clear();
                         openNHL.setEnabled(false);
                     }
                 }
@@ -224,14 +287,13 @@ public class Testing extends javax.swing.JDialog {
                     this.cricket = new Links(url);
                     this.cricketLinks = cricket.getFinalLinks();
                     if(!cricketLinks.isEmpty()){
-                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.cricketLinks.entrySet()){
                             comboCricket.addItem(entry.getKey());
                         }
                        openCricket.setEnabled(true);
+                       comboCricket.setSelectedIndex(0);
                     }else{
                         comboCricket.addItem("There are no games available!");
-                        this.listModel.clear();
                         openCricket.setEnabled(false);
                     }
                 }
@@ -241,14 +303,13 @@ public class Testing extends javax.swing.JDialog {
                     this.ncaabb = new Links(url);
                     this.ncaabbLinks = ncaabb.getFinalLinks();
                     if(!ncaabbLinks.isEmpty()){
-                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.ncaabbLinks.entrySet()){
                             comboNCAABB.addItem(entry.getKey());
                         } 
                        openNCAABB.setEnabled(true);
+                       comboNCAABB.setSelectedIndex(0);
                     }else{
                         comboNCAABB.addItem("There are no games available!");
-                        this.listModel.clear();
                         openNCAABB.setEnabled(false);
                     }
                 }
@@ -258,14 +319,13 @@ public class Testing extends javax.swing.JDialog {
                     this.rugby = new Links(url);
                     this.rugbyLinks = rugby.getFinalLinks();
                     if(!rugbyLinks.isEmpty()){
-                        this.listModel.clear();
                        for (Map.Entry<String, Collection<String>> entry : this.rugbyLinks.entrySet()){
                             comboRugby.addItem(entry.getKey());
                         } 
                        openRugby.setEnabled(true);
+                       comboRugby.setSelectedIndex(0);
                     }else{
                         comboRugby.addItem("There are no games available!");
-                        this.listModel.clear();
                         openRugby.setEnabled(false);
                     }
                 }
@@ -831,12 +891,11 @@ public class Testing extends javax.swing.JDialog {
         if(!soccerLinks.isEmpty() && this.soccer != null){
             String game = (String)comboSoccer.getSelectedItem();
             Collection<String>  gameLinks = soccerLinks.get(game);
-            //DefaultListModel listModel = new DefaultListModel();
-            this.listModel.clear();
+            soccerModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                soccerModel.addElement(s);
             }
-            listSoccer.setModel(listModel);
+            listSoccer.setModel(soccerModel);
         }
     }//GEN-LAST:event_comboSoccerActionPerformed
 
@@ -912,12 +971,11 @@ public class Testing extends javax.swing.JDialog {
         if(!nbaLinks.isEmpty() && this.nba != null){
             String game = (String)comboNBA.getSelectedItem();
             Collection<String>  gameLinks = nbaLinks.get(game);
-//            DefaultListModel listModel = new DefaultListModel();
-            this.listModel.clear();
+            nbaModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                nbaModel.addElement(s);
             }
-            listNBA.setModel(listModel);
+            listNBA.setModel(nbaModel);
         }
     }//GEN-LAST:event_comboNBAActionPerformed
 
@@ -946,12 +1004,12 @@ public class Testing extends javax.swing.JDialog {
         if(!nflLinks.isEmpty() && this.nfl != null){
             String game = (String)comboNFL.getSelectedItem();
             Collection<String>  gameLinks = nflLinks.get(game);
-            this.listModel.clear();
             //DefaultListModel listModel = new DefaultListModel();
+            nflModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                nflModel.addElement(s);
             }
-            listNFL.setModel(listModel);
+            listNFL.setModel(nflModel);
         }
     }//GEN-LAST:event_comboNFLActionPerformed
 
@@ -980,11 +1038,12 @@ public class Testing extends javax.swing.JDialog {
         if(!mmaLinks.isEmpty() && this.mma != null){
             String game = (String)comboMMA.getSelectedItem();
             Collection<String>  gameLinks = mmaLinks.get(game);
-            this.listModel.clear();
+            //DefaultListModel listModel = new DefaultListModel();
+            mmaModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                mmaModel.addElement(s);
             }
-            listMMA.setModel(listModel);
+            listMMA.setModel(mmaModel);
         }
     }//GEN-LAST:event_comboMMAActionPerformed
 
@@ -1013,12 +1072,12 @@ public class Testing extends javax.swing.JDialog {
         if(!nhlLinks.isEmpty() && this.nhl != null){
             String game = (String)comboNHL.getSelectedItem();
             Collection<String>  gameLinks = nhlLinks.get(game);
-//            DefaultListModel listModel = new DefaultListModel();
-              this.listModel.clear();
+            //DefaultListModel listModel = new DefaultListModel();
+            nhlModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                nhlModel.addElement(s);
             }
-            listNHL.setModel(listModel);
+            listNHL.setModel(nhlModel);
         }
     }//GEN-LAST:event_comboNHLActionPerformed
 
@@ -1027,11 +1086,11 @@ public class Testing extends javax.swing.JDialog {
             String game = (String)comboCricket.getSelectedItem();
             Collection<String>  gameLinks = cricketLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
-            this.listModel.clear();
+            cricketModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                cricketModel.addElement(s);
             }
-            listCricket.setModel(listModel);
+            listCricket.setModel(cricketModel);
         }
     }//GEN-LAST:event_comboCricketActionPerformed
 
@@ -1061,11 +1120,11 @@ public class Testing extends javax.swing.JDialog {
             String game = (String)comboNCAABB.getSelectedItem();
             Collection<String>  gameLinks = ncaabbLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
-            this.listModel.clear();
+            ncaabbModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                ncaabbModel.addElement(s);
             }
-            listNCAABB.setModel(listModel);
+            listNCAABB.setModel(ncaabbModel);
         }
     }//GEN-LAST:event_comboNCAABBActionPerformed
 
@@ -1095,11 +1154,11 @@ public class Testing extends javax.swing.JDialog {
             String game = (String)comboRugby.getSelectedItem();
             Collection<String>  gameLinks = rugbyLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
-            this.listModel.clear();
+            rugbyModel.clear();
             for(String s : gameLinks){
-                listModel.addElement(s);
+                rugbyModel.addElement(s);
             }
-            listRugby.setModel(listModel);
+            listRugby.setModel(rugbyModel);
         }
     }//GEN-LAST:event_comboRugbyActionPerformed
 
@@ -1123,7 +1182,7 @@ public class Testing extends javax.swing.JDialog {
             }
         }
     }//GEN-LAST:event_openRugbyActionPerformed
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton closeCricket;
