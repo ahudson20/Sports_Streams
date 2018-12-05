@@ -34,13 +34,13 @@ public class Links {
                 /* Doesnt make sense to keep manually filtering links? - most are permanent links though.. */
                 if((text.matches(".*\\d+.*") || text.contains("Game Thread")) && !text.contains("PS4") && !text.contains("NHL TV") && !text.contains("PLEASE")){
                     String httpHref = m.parent().attr("abs:href");
-                    
+                    text = text.replaceAll("(\\[)([A-Za-z0-9:\\s])*(\\])", "").trim();
                     if(httpHref.length() > 0 && text.substring(0, 12).equalsIgnoreCase("Game Thread:")){
-                        finalLinks.put(text.substring(13), diveLink(httpHref));
+                        finalLinks.put(text.substring(13).trim(), diveLink(httpHref));
                     }else if(httpHref.length() > 0 && text.substring(0,15).equalsIgnoreCase("archive thread:")){
-                        finalLinks.put(text.substring(16), diveLink(httpHref));
+                        finalLinks.put(text.substring(16).trim(), diveLink(httpHref));
                     }else if(httpHref.length() > 0){
-                        finalLinks.put(text, diveLink(httpHref));
+                        finalLinks.put(text.trim(), diveLink(httpHref));
                     }
                 }
             }
