@@ -15,7 +15,6 @@
 
 ## TODO
 
-* Need to update Soccer - https://www.reddit.com/r/soccerstreams_pl/ , https://www.reddit.com/r/soccerstreams_other
 * Find better way of accessing H2 links on Reddit
 * Add [Golf](https://www.reddit.com/r/PuttStreams/), [MLB](https://www.reddit.com/r/MLBStreams/), [NCAA Football](https://www.reddit.com/r/CFBStreams/), [Hockey](https://www.reddit.com/r/HockeyStreams), [CFL](https://www.reddit.com/r/CFLStreams) and [WWE](https://www.reddit.com/r/WWEstreams)
 * Reduce redundant GUI code
