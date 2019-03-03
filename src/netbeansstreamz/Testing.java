@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import static netbeansstreamz.Constants.*;
+
 /**
  *
  * @author anaruhudson
@@ -39,14 +41,14 @@ public class Testing extends javax.swing.JDialog {
     private Map<String, Collection<String>> ncaabbLinks;
     private Map<String, Collection<String>> rugbyLinks;
     
-    private DefaultListModel soccerModel = new DefaultListModel();;
-    private DefaultListModel nbaModel = new DefaultListModel();;
-    private DefaultListModel nflModel = new DefaultListModel();;
-    private DefaultListModel mmaModel = new DefaultListModel();;
-    private DefaultListModel nhlModel = new DefaultListModel();;
-    private DefaultListModel cricketModel = new DefaultListModel();;
-    private DefaultListModel ncaabbModel = new DefaultListModel();;
-    private DefaultListModel rugbyModel = new DefaultListModel();;
+    private DefaultListModel soccerModel = new DefaultListModel();
+    private DefaultListModel nbaModel = new DefaultListModel();
+    private DefaultListModel nflModel = new DefaultListModel();
+    private DefaultListModel mmaModel = new DefaultListModel();
+    private DefaultListModel nhlModel = new DefaultListModel();
+    private DefaultListModel cricketModel = new DefaultListModel();
+    private DefaultListModel ncaabbModel = new DefaultListModel();
+    private DefaultListModel rugbyModel = new DefaultListModel();
   
     /**
      * Creates new form Testing
@@ -80,119 +82,119 @@ public class Testing extends javax.swing.JDialog {
             switch(tab){
                 case 0:
                     Testing.this.soccer = null;
-                    url = "https://www.reddit.com/r/soccerstreams/";
+                    url = SOCCER_URL;
                     comboSoccer.setEditable(false);
                     comboSoccer.removeAllItems();
                     setLinks(tab, url);
                     String game = (String)comboSoccer.getSelectedItem();
                     Collection<String>  gameLinks = soccerLinks.get(game);
                     soccerModel.clear();
-                    for(String s : gameLinks){
+                    gameLinks.forEach((s) -> {
                         soccerModel.addElement(s);
-                    }
+                    });
                     listSoccer.setModel(soccerModel);
                     break;
                 case 1 : 
                     Testing.this.nba = null;
-                    url = "https://www.reddit.com/r/nbastreams/";
+                    url = NBA_URL;
                     comboNBA.setEditable(false);
                     comboNBA.removeAllItems();
                     setLinks(tab, url);
                     String nbagame = (String)comboNBA.getSelectedItem();
                     Collection<String>  nbagameLinks = nbaLinks.get(nbagame);
                     nbaModel.clear();
-                    for(String s : nbagameLinks){
+                    nbagameLinks.forEach((s) -> {
                         nbaModel.addElement(s);
-                    }
+                    });
                     listNBA.setModel(nbaModel);
                     break;
                 case 2 :
                     Testing.this.nfl = null;
-                    url = "https://www.reddit.com/r/nflstreams/";
+                    url = NFL_URL;
                     comboNFL.setEditable(false);
                     comboNFL.removeAllItems();
                     setLinks(tab, url);
                     String nflgame = (String)comboNFL.getSelectedItem();
                     Collection<String>  nflgameLinks = nflLinks.get(nflgame);
                     nflModel.clear();
-                    for(String s : nflgameLinks){
+                    nflgameLinks.forEach((s) -> {
                         nflModel.addElement(s);
-                    }
+                    });
                     listNFL.setModel(nflModel);
                     break;
                 case 3 :
                     Testing.this.mma = null;
-                    url = "https://www.reddit.com/r/MMAStreams/";
+                    url = MMA_URL;
                     comboMMA.setEditable(false);
                     comboMMA.removeAllItems();
                     setLinks(tab, url);
                     String mmagame = (String)comboMMA.getSelectedItem();
                     Collection<String>  mmagameLinks = mmaLinks.get(mmagame);
                     mmaModel.clear();
-                    for(String s : mmagameLinks){
+                    mmagameLinks.forEach((s) -> {
                         mmaModel.addElement(s);
-                    }
+                    });
                     listMMA.setModel(mmaModel);
                     break;
                 case 4 :
                     Testing.this.nhl = null;
-                    url = "https://www.reddit.com/r/NHLStreams";
+                    url = NHL_URL;
                     comboNHL.setEditable(false);
                     comboNHL.removeAllItems();
                     setLinks(tab, url);
                     String nhlgame = (String)comboNHL.getSelectedItem();
                     Collection<String>  nhlgameLinks = nhlLinks.get(nhlgame);
                     nhlModel.clear();
-                    for(String s : nhlgameLinks){
+                    nhlgameLinks.forEach((s) -> {
                         nhlModel.addElement(s);
-                    }
+                    });
                     listNHL.setModel(nhlModel);
                     break;
                 case 5 :
                     Testing.this.cricket = null;
-                    url = "https://www.reddit.com/r/CricketStreams";
+                    url = CRICKET_URL;
                     comboCricket.setEditable(false);
                     comboCricket.removeAllItems();
                     setLinks(tab, url);
                     String cricketgame = (String)comboCricket.getSelectedItem();
                     Collection<String> cricketgameLinks = cricketLinks.get(cricketgame);
                     cricketModel.clear();
-                    for(String s : cricketgameLinks){
+                    cricketgameLinks.forEach((s) -> {
                         cricketModel.addElement(s);
-                    }
+                    });
                     listCricket.setModel(cricketModel);
                     break;
                 case 6 :
                     Testing.this.ncaabb = null;
-                    url = "https://www.reddit.com/r/ncaaBBallStreams/";
+                    url = NCAABB_URL;
                     comboNCAABB.setEditable(false);
                     comboNCAABB.removeAllItems();
                     setLinks(tab, url);
                     String ncaabbgame = (String)comboNCAABB.getSelectedItem();
                     Collection<String> ncaabbgameLinks = ncaabbLinks.get(ncaabbgame);
                     ncaabbModel.clear();
-                    for(String s : ncaabbgameLinks){
+                    ncaabbgameLinks.forEach((s) -> {
                         ncaabbModel.addElement(s);
-                    }
+                    });
                     listNCAABB.setModel(ncaabbModel);
                     break;
                 case 7 :
                     Testing.this.rugby = null;
-                    url = "https://www.reddit.com/r/rugbystreams/";
+                    url = RUGBY_URL;
                     comboRugby.setEditable(false);
                     comboRugby.removeAllItems();
                     setLinks(tab, url);
                     String rugbygame = (String)comboRugby.getSelectedItem();
                     Collection<String> rugbygameLinks = rugbyLinks.get(rugbygame);
                     rugbyModel.clear();
-                    for(String s : rugbygameLinks){
+                    rugbygameLinks.forEach((s) -> {
                         rugbyModel.addElement(s);
-                    }
+                    });
                     listRugby.setModel(rugbyModel);
                     break;
                 default:
                     Testing.this.soccer = null;
-                    url = "https://www.reddit.com/r/soccerstreams/";
+                    url = SOCCER_URL;
                     comboSoccer.setEditable(false);
                     comboSoccer.removeAllItems();
                     setLinks(tab, url);
@@ -208,9 +210,9 @@ public class Testing extends javax.swing.JDialog {
                     this.soccer = new Links(url);
                     this.soccerLinks = soccer.getFinalLinks();
                     if(!soccerLinks.isEmpty()){
-                        for (Map.Entry<String, Collection<String>> entry : this.soccerLinks.entrySet()){
+                        this.soccerLinks.entrySet().forEach((entry) -> {
                             comboSoccer.addItem(entry.getKey());
-                        }
+                        });
                         openSoccer.setEnabled(true);
                         comboSoccer.setSelectedIndex(0);
                    }else{
@@ -223,9 +225,9 @@ public class Testing extends javax.swing.JDialog {
                     this.nba = new Links(url);
                     this.nbaLinks = nba.getFinalLinks();
                     if(!nbaLinks.isEmpty()){
-                        for (Map.Entry<String, Collection<String>> entry : this.nbaLinks.entrySet()){
+                        this.nbaLinks.entrySet().forEach((entry) -> {
                             comboNBA.addItem(entry.getKey());
-                        }
+                        });
                         openNBA.setEnabled(true);
                         comboNBA.setSelectedIndex(0);
                     }else{
@@ -238,9 +240,9 @@ public class Testing extends javax.swing.JDialog {
                     this.nfl = new Links(url);
                     this.nflLinks = nfl.getFinalLinks();
                     if(!nflLinks.isEmpty()){
-                        for (Map.Entry<String, Collection<String>> entry : this.nflLinks.entrySet()){
+                        this.nflLinks.entrySet().forEach((entry) -> {
                             comboNFL.addItem(entry.getKey());
-                        }
+                        });
                         openNFL.setEnabled(true);
                         comboNFL.setSelectedIndex(0);
                     }else{
@@ -254,9 +256,9 @@ public class Testing extends javax.swing.JDialog {
                     this.mma = new Links(url);
                     this.mmaLinks = mma.getFinalLinks();
                     if(!mmaLinks.isEmpty()){
-                       for (Map.Entry<String, Collection<String>> entry : this.mmaLinks.entrySet()){
+                        this.mmaLinks.entrySet().forEach((entry) -> {
                             comboMMA.addItem(entry.getKey());
-                        }
+                        });
                        openMMA.setEnabled(true);
                        comboMMA.setSelectedIndex(0);
                     }else{
@@ -271,9 +273,9 @@ public class Testing extends javax.swing.JDialog {
                     this.nhl = new Links(url);
                     this.nhlLinks = nhl.getFinalLinks();
                     if(!nhlLinks.isEmpty()){
-                       for (Map.Entry<String, Collection<String>> entry : this.nhlLinks.entrySet()){
+                        this.nhlLinks.entrySet().forEach((entry) -> {
                             comboNHL.addItem(entry.getKey());
-                        }
+                        });
                        openNHL.setEnabled(true);
                        comboNHL.setSelectedIndex(0);
                     }else{
@@ -287,9 +289,9 @@ public class Testing extends javax.swing.JDialog {
                     this.cricket = new Links(url);
                     this.cricketLinks = cricket.getFinalLinks();
                     if(!cricketLinks.isEmpty()){
-                       for (Map.Entry<String, Collection<String>> entry : this.cricketLinks.entrySet()){
+                        this.cricketLinks.entrySet().forEach((entry) -> {
                             comboCricket.addItem(entry.getKey());
-                        }
+                        });
                        openCricket.setEnabled(true);
                        comboCricket.setSelectedIndex(0);
                     }else{
@@ -303,9 +305,9 @@ public class Testing extends javax.swing.JDialog {
                     this.ncaabb = new Links(url);
                     this.ncaabbLinks = ncaabb.getFinalLinks();
                     if(!ncaabbLinks.isEmpty()){
-                       for (Map.Entry<String, Collection<String>> entry : this.ncaabbLinks.entrySet()){
+                        this.ncaabbLinks.entrySet().forEach((entry) -> {
                             comboNCAABB.addItem(entry.getKey());
-                        } 
+                        }); 
                        openNCAABB.setEnabled(true);
                        comboNCAABB.setSelectedIndex(0);
                     }else{
@@ -319,9 +321,9 @@ public class Testing extends javax.swing.JDialog {
                     this.rugby = new Links(url);
                     this.rugbyLinks = rugby.getFinalLinks();
                     if(!rugbyLinks.isEmpty()){
-                       for (Map.Entry<String, Collection<String>> entry : this.rugbyLinks.entrySet()){
+                        this.rugbyLinks.entrySet().forEach((entry) -> {
                             comboRugby.addItem(entry.getKey());
-                        } 
+                        }); 
                        openRugby.setEnabled(true);
                        comboRugby.setSelectedIndex(0);
                     }else{
@@ -441,12 +443,12 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(closeSoccer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(soccerReset, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(soccerReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openSoccer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -456,7 +458,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboSoccer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeSoccer)
@@ -502,9 +504,9 @@ public class Testing extends javax.swing.JDialog {
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(closeNBA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(nbaReset, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                        .addComponent(nbaReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(195, 195, 195)
                         .addComponent(openNBA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -514,7 +516,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboNBA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeNBA)
@@ -557,12 +559,12 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(closeNFL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(nflReset, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nflReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openNFL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -572,7 +574,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboNFL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeNFL)
@@ -599,6 +601,11 @@ public class Testing extends javax.swing.JDialog {
         });
 
         mmaReset.setText("Refresh");
+        mmaReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mmaResetActionPerformed(evt);
+            }
+        });
 
         openMMA.setText("Open");
         openMMA.addActionListener(new java.awt.event.ActionListener() {
@@ -615,12 +622,12 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(closeMMA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(mmaReset, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(mmaReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openMMA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -630,7 +637,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboMMA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeMMA)
@@ -673,12 +680,12 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(closeNHL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(nhlReset, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nhlReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openNHL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -688,7 +695,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboNHL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeNHL)
@@ -731,11 +738,11 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(closeCricket, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(cricketReset, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cricketReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openCricket, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -746,7 +753,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboCricket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeCricket)
@@ -789,12 +796,12 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(closeNCAABB, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(ncaabbReset, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ncaabbReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openNCAABB, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -804,7 +811,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboNCAABB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ncaabbReset)
@@ -847,12 +854,12 @@ public class Testing extends javax.swing.JDialog {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(closeRugby, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(rugbyReset, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rugbyReset, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(openRugby, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -862,7 +869,7 @@ public class Testing extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(comboRugby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeRugby)
@@ -877,7 +884,7 @@ public class Testing extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -892,9 +899,9 @@ public class Testing extends javax.swing.JDialog {
             String game = (String)comboSoccer.getSelectedItem();
             Collection<String>  gameLinks = soccerLinks.get(game);
             soccerModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 soccerModel.addElement(s);
-            }
+            });
             listSoccer.setModel(soccerModel);
         }
     }//GEN-LAST:event_comboSoccerActionPerformed
@@ -924,23 +931,23 @@ public class Testing extends javax.swing.JDialog {
          int tab = jTabbedPane1.getSelectedIndex();
         String url;
         switch(tab){
-            case 0: url = "https://www.reddit.com/r/soccerstreams/";
+            case 0: url = SOCCER_URL;
                 break;
-            case 1 : url = "https://www.reddit.com/r/nbastreams/";
+            case 1 : url = NBA_URL;
                 break;
-            case 2 : url = "https://www.reddit.com/r/nflstreams/";
+            case 2 : url = NFL_URL;
                 break;
-            case 3 : url = "https://www.reddit.com/r/MMAStreams/";
+            case 3 : url = MMA_URL;
                 break;
-            case 4 : url = "https://www.reddit.com/r/NHLStreams";
+            case 4 : url = NHL_URL;
                 break;
-            case 5 : url = "https://www.reddit.com/r/CricketStreams";
+            case 5 : url = CRICKET_URL;
                 break;
-            case 6 : url = "https://www.reddit.com/r/ncaaBBallStreams/";
+            case 6 : url = NCAABB_URL;
                 break;
-            case 7 : url = "https://www.reddit.com/r/rugbystreams/";
+            case 7 : url = RUGBY_URL;
                 break;
-            default: url = "https://www.reddit.com/r/soccerstreams/";
+            default: url = SOCCER_URL;
                 break;
         }
         setLinks(tab, url);
@@ -972,9 +979,9 @@ public class Testing extends javax.swing.JDialog {
             String game = (String)comboNBA.getSelectedItem();
             Collection<String>  gameLinks = nbaLinks.get(game);
             nbaModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 nbaModel.addElement(s);
-            }
+            });
             listNBA.setModel(nbaModel);
         }
     }//GEN-LAST:event_comboNBAActionPerformed
@@ -1006,9 +1013,9 @@ public class Testing extends javax.swing.JDialog {
             Collection<String>  gameLinks = nflLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
             nflModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 nflModel.addElement(s);
-            }
+            });
             listNFL.setModel(nflModel);
         }
     }//GEN-LAST:event_comboNFLActionPerformed
@@ -1040,9 +1047,9 @@ public class Testing extends javax.swing.JDialog {
             Collection<String>  gameLinks = mmaLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
             mmaModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 mmaModel.addElement(s);
-            }
+            });
             listMMA.setModel(mmaModel);
         }
     }//GEN-LAST:event_comboMMAActionPerformed
@@ -1074,9 +1081,9 @@ public class Testing extends javax.swing.JDialog {
             Collection<String>  gameLinks = nhlLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
             nhlModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 nhlModel.addElement(s);
-            }
+            });
             listNHL.setModel(nhlModel);
         }
     }//GEN-LAST:event_comboNHLActionPerformed
@@ -1087,9 +1094,9 @@ public class Testing extends javax.swing.JDialog {
             Collection<String>  gameLinks = cricketLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
             cricketModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 cricketModel.addElement(s);
-            }
+            });
             listCricket.setModel(cricketModel);
         }
     }//GEN-LAST:event_comboCricketActionPerformed
@@ -1121,9 +1128,9 @@ public class Testing extends javax.swing.JDialog {
             Collection<String>  gameLinks = ncaabbLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
             ncaabbModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 ncaabbModel.addElement(s);
-            }
+            });
             listNCAABB.setModel(ncaabbModel);
         }
     }//GEN-LAST:event_comboNCAABBActionPerformed
@@ -1155,9 +1162,9 @@ public class Testing extends javax.swing.JDialog {
             Collection<String>  gameLinks = rugbyLinks.get(game);
             //DefaultListModel listModel = new DefaultListModel();
             rugbyModel.clear();
-            for(String s : gameLinks){
+            gameLinks.forEach((s) -> {
                 rugbyModel.addElement(s);
-            }
+            });
             listRugby.setModel(rugbyModel);
         }
     }//GEN-LAST:event_comboRugbyActionPerformed
@@ -1182,6 +1189,10 @@ public class Testing extends javax.swing.JDialog {
             }
         }
     }//GEN-LAST:event_openRugbyActionPerformed
+
+    private void mmaResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmaResetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mmaResetActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

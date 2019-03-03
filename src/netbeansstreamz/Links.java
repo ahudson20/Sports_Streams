@@ -20,13 +20,13 @@ public class Links {
      * Tries to connect to the link set in data-field,
      * Then finds the posts on Reddit for each Game Thread, and calls diveLink on each Game Thread link.
      */
-    public void setLinksToDive(){
+    private void setLinksToDive(){
         try {
             Document doc = Jsoup.connect(this.url).get();
             
             /* Need better way of getting links to dive, otherwise will have to manually update reddit CSS selectors */
             //Elements h2Only = doc.select("h2.s56cc5r-0");
-            Elements h2Only = doc.select("h2.imors3-0");
+            Elements h2Only = doc.select("h2.s1okktje-0");
 
             for(Element m : h2Only){
                 String text = m.text();
@@ -37,6 +37,7 @@ public class Links {
                     text = text.replaceAll("(\\[)([A-Za-z0-9:\\s])*(\\])", "").trim();
                     text = text.replaceAll("(?i)game thread:", "").trim();
                     text = text.replaceAll("(?i)archive thread:", "").trim();
+                    text = text.replaceAll("(?i)event thread thread:", "").trim();
 //                    if(httpHref.length() > 0 && text.substring(0, 12).equalsIgnoreCase("Game Thread:")){
 //                        finalLinks.put(text.substring(13).trim(), diveLink(httpHref));
 //                    }else if(httpHref.length() > 0 && text.substring(0,15).equalsIgnoreCase("archive thread:")){
@@ -65,7 +66,7 @@ public class Links {
         try {
             Document doc = Jsoup.connect(link).get();
 
-            Elements streamsOnly = doc.select("a[href].yklcuq-27");
+            Elements streamsOnly = doc.select("a[href].s90z9tc-27");
 
             for(Element h : streamsOnly){
                 String httpHref = h.attr("abs:href");

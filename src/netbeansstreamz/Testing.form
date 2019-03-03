@@ -61,12 +61,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeSoccer" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="soccerReset" pref="156" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="soccerReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="openSoccer" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -80,7 +80,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="comboSoccer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeSoccer" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -157,9 +157,9 @@
                           <Component id="jScrollPane2" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeNBA" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="nbaReset" pref="156" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace pref="194" max="32767" attributes="0"/>
+                              <Component id="nbaReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
                               <Component id="openNBA" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -173,7 +173,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="comboNBA" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeNBA" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -247,12 +247,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeNFL" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="nflReset" pref="156" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="nflReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="openNFL" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -266,7 +266,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="comboNFL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeNFL" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -340,12 +340,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane4" max="32767" attributes="0"/>
+                          <Component id="jScrollPane4" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeMMA" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="mmaReset" pref="156" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="mmaReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="openMMA" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -359,7 +359,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="comboMMA" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeMMA" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -406,6 +406,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Refresh"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mmaResetActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="openMMA">
               <Properties>
@@ -433,12 +436,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane5" max="32767" attributes="0"/>
+                          <Component id="jScrollPane5" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeNHL" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="nhlReset" pref="156" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="nhlReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="openNHL" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -452,7 +455,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="comboNHL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane5" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeNHL" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -526,11 +529,11 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane6" pref="472" max="32767" attributes="0"/>
+                          <Component id="jScrollPane6" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeCricket" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="cricketReset" min="-2" pref="156" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="cricketReset" min="-2" pref="160" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="openCricket" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
@@ -545,7 +548,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="comboCricket" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane6" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeCricket" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -619,12 +622,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane7" max="32767" attributes="0"/>
+                          <Component id="jScrollPane7" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeNCAABB" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="ncaabbReset" min="-2" pref="156" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="ncaabbReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="openNCAABB" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -638,7 +641,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="comboNCAABB" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane7" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane7" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ncaabbReset" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -712,12 +715,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane8" max="32767" attributes="0"/>
+                          <Component id="jScrollPane8" pref="749" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="closeRugby" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="rugbyReset" min="-2" pref="156" max="-2" attributes="0"/>
-                              <EmptySpace pref="50" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="rugbyReset" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="openRugby" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -731,7 +734,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="comboRugby" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane8" pref="343" max="32767" attributes="0"/>
+                      <Component id="jScrollPane8" pref="439" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="closeRugby" alignment="3" min="-2" max="-2" attributes="0"/>
