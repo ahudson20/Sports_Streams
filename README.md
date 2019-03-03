@@ -9,7 +9,7 @@
 * [NHL](https://www.reddit.com/r/NHLStreams/)
 * [NCAA Basketball](https://www.reddit.com/r/ncaaBBallStreams/)
 * [MMA](https://www.reddit.com/r/MMAStreams/)
-* [Football](https://www.reddit.com/r/soccerstreams/)
+* ~~[Football](https://www.reddit.com/r/soccerstreams/)~~ Update: https://www.reddit.com/r/redsoccer/, https://www.footybite.com/
 * [Cricket](https://www.reddit.com/r/cricketstreams/)
 * [Rugby](https://www.reddit.com/r/rugbystreams/)
 
