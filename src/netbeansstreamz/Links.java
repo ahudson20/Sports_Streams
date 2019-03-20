@@ -4,7 +4,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import java.io.*;
 import java.util.*;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Links {
@@ -24,30 +23,18 @@ public class Links {
         try {
             Document doc = Jsoup.connect(this.url).get();
             
-            /* Need better way of getting links to dive, otherwise will have to manually update reddit CSS selectors */
-            //Elements h2Only = doc.select("h2.s56cc5r-0");
-            Elements h2Only = doc.select("h2.s1okktje-0");
+            // Need better way of getting links to dive, otherwise will have to manually update reddit CSS selectors
+            // Elements h2Only = doc.select("h2.s56cc5r-0");
+            // Most recent css selector: .s1okktje-0
+            Elements h2Only = doc.select("h2");
 
-            for(Element m : h2Only){
+            h2Only.forEach((m) -> {
                 String text = m.text();
-                /* FIGURE OUT A BETTER WAY OF FILTERING LINKS?? */
-                /* Doesnt make sense to keep manually filtering links? - most are permanent links though.. */
-                if((text.matches(".*\\d+.*") || text.contains("Game Thread")) && !text.contains("PS4") && !text.contains("NHL TV") && !text.contains("PLEASE")){
-                    String httpHref = m.parent().attr("abs:href");
-                    text = text.replaceAll("(\\[)([A-Za-z0-9:\\s])*(\\])", "").trim();
-                    text = text.replaceAll("(?i)game thread:", "").trim();
-                    text = text.replaceAll("(?i)archive thread:", "").trim();
-                    text = text.replaceAll("(?i)event thread thread:", "").trim();
-//                    if(httpHref.length() > 0 && text.substring(0, 12).equalsIgnoreCase("Game Thread:")){
-//                        finalLinks.put(text.substring(13).trim(), diveLink(httpHref));
-//                    }else if(httpHref.length() > 0 && text.substring(0,15).equalsIgnoreCase("archive thread:")){
-//                        finalLinks.put(text.substring(16).trim(), diveLink(httpHref));
-//                    }else 
-                    if(httpHref.length() > 0){
-                        finalLinks.put(text, diveLink(httpHref));
-                    }
+                if (text.matches("(.*)(\\s)(?i)v(\\s)(.*)") || text.matches("(.*)(\\s)(?i)vs(\\s)(.*)") || text.matches("(.*)(\\s)(?i)vs.(\\s)(.*)") || text.matches("(.*)(\\s)(?i)v.(\\s)(.*)") || text.matches("(.*)(\\s)(?i)at(\\s)(.*)") || text.matches("(.*)(\\s)(?i)@(\\s)(.*)")) {
+                    text = text.replaceAll("(?i)game thread:", "").replaceAll("(?i)archive thread:", "").replaceAll("(?i)event thread thread:", "").replaceAll("(\\[)([A-Za-z0-9:\\s])*(\\])", "").replaceAll("(\\()([A-Za-z0-9:\\s])*(\\))", "").trim();
+                    finalLinks.put(text, diveLink(m.parent().attr("abs:href")));
                 }
-            }
+            });
 
         }catch(IOException e){
             System.out.println(e.getMessage());
@@ -56,24 +43,24 @@ public class Links {
     
     /**
      * Takes a String representing a URL of a Game Thread.
-     * It tries to connect to the URL, and scrapes for any livestream links and adds them to a LinkedHashSet.
+     * It tries to connect to the URL, and scrapes for any live-stream links and adds them to a LinkedHashSet.
      * 
      * @param link the URL that should be connected to and scraped for streams.
-     * @return eachLink a Collection of strings storing each livestream link for the associated Game Thread.
+     * @return eachLink a Collection of strings storing each live-stream link for the associated Game Thread.
      */
     public Collection<String> diveLink(String link){
         Collection<String> eachLink = new LinkedHashSet<>();
         try {
             Document doc = Jsoup.connect(link).get();
 
-            Elements streamsOnly = doc.select("a[href].s90z9tc-27");
+            //Elements streamsOnly = doc.select("a[href].s14dydj4-27");
+            Elements allLinks = doc.select("a[href]");
+            
+            allLinks.stream().filter((t) -> (t.parent().parent().parent().parent().parent().className().contains("Comment")));
 
-            for(Element h : streamsOnly){
-                String httpHref = h.attr("abs:href");
-                if(!(httpHref.contains("https://www.reddit.com") || httpHref.contains("https://discord") || httpHref.contains("https://time.is"))){
-                    eachLink.add(httpHref);
-                } 
-            }
+            allLinks.stream().map((h) -> h.attr("abs:href")).filter((httpHref) -> (!(httpHref.contains("https://www.reddit.com") || httpHref.contains("https://discord") || httpHref.contains("https://time.is") || httpHref.matches("(http://www.timebie.com)(.*)") || httpHref.matches("((https://)||(http://))(.*)reddit(.*)(.com)(.*)")))).forEachOrdered((httpHref) -> {
+                eachLink.add(httpHref);
+            });
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
@@ -88,4 +75,18 @@ public class Links {
         return finalLinks;
     }
 }
+    
+    
+    
+//                if((text.matches(".*\\d+.*") || text.contains("Game Thread")) && !text.contains("PS4") && !text.contains("NHL TV") && !text.contains("PLEASE")){
+//                    String httpHref = m.parent().attr("abs:href");
+//                    //System.out.println("Link: " + httpHref);
+//                    text = text.replaceAll("(\\[)([A-Za-z0-9:\\s])*(\\])", "").trim();
+//                    text = text.replaceAll("(?i)game thread:", "").trim();
+//                    text = text.replaceAll("(?i)archive thread:", "").trim();
+//                    text = text.replaceAll("(?i)event thread thread:", "").trim();
+//                    if(httpHref.length() > 0){
+//                        finalLinks.put(text, diveLink(httpHref));
+//                    }
+//                }
 
