@@ -10,6 +10,11 @@ public class Links {
     private String url;
     private Map<String, Collection<String>> finalLinks = new HashMap<>();    
     
+    /**
+     * Constructor for Links class, sets URL to the value passed,
+     * and calls setLinksToDive.
+     * @param url a String of the URL to be accessed and have links scraped from.
+     */
     public Links(String url){
         this.url = url;
         setLinksToDive();
