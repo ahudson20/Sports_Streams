@@ -601,11 +601,6 @@ public class Testing extends javax.swing.JDialog {
         });
 
         mmaReset.setText("Refresh");
-        mmaReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mmaResetActionPerformed(evt);
-            }
-        });
 
         openMMA.setText("Open");
         openMMA.addActionListener(new java.awt.event.ActionListener() {
@@ -926,9 +921,9 @@ public class Testing extends javax.swing.JDialog {
     private void closeSoccerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeSoccerActionPerformed
         System.exit(0);
     }//GEN-LAST:event_closeSoccerActionPerformed
-
+    
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-         int tab = jTabbedPane1.getSelectedIndex();
+        int tab = jTabbedPane1.getSelectedIndex();
         String url;
         switch(tab){
             case 0: url = SOCCER_URL;
@@ -1189,12 +1184,8 @@ public class Testing extends javax.swing.JDialog {
             }
         }
     }//GEN-LAST:event_openRugbyActionPerformed
-
-    private void mmaResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mmaResetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mmaResetActionPerformed
     
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton closeCricket;
     private javax.swing.JButton closeMMA;
