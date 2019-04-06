@@ -12,6 +12,7 @@
 * Updated: [Football](https://www.reddit.com/r/redsoccer/), https://www.footybite.com/
 * ~~[Cricket](https://www.reddit.com/r/cricketstreams/)~~ Updated??: https://www.reddit.com/r/InsectsEnthusiasts
 * [Rugby](https://www.reddit.com/r/rugbystreams/)
+* [Boxing](https://www.reddit.com/r/BoxingStreams)
 
 ## TODO
 
