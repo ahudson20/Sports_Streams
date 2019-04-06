@@ -13,13 +13,10 @@
 * ~~[Cricket](https://www.reddit.com/r/cricketstreams/)~~ Updated??: https://www.reddit.com/r/InsectsEnthusiasts
 * [Rugby](https://www.reddit.com/r/rugbystreams/)
 
-* [Boxing](https://www.reddit.com/r/BoxingStreams)
-* [Motorsports](https://www.reddit.com/r/motorsportsstreams/)
-
 ## TODO
 
 * ~~Find better way of accessing H2 links on Reddit~~
-* Add [Golf](https://www.reddit.com/r/PuttStreams/), [MLB](https://www.reddit.com/r/MLBStreams/), [NCAA Football](https://www.reddit.com/r/CFBStreams/), [Hockey](https://www.reddit.com/r/HockeyStreams), [CFL](https://www.reddit.com/r/CFLStreams) and [WWE](https://www.reddit.com/r/WWEstreams)
+* Add [Golf](https://www.reddit.com/r/PuttStreams/), [MLB](https://www.reddit.com/r/MLBStreams/), [NCAA Football](https://www.reddit.com/r/CFBStreams/), [Hockey](https://www.reddit.com/r/HockeyStreams), [CFL](https://www.reddit.com/r/CFLStreams), [WWE](https://www.reddit.com/r/WWEstreams), [Boxing](https://www.reddit.com/r/BoxingStreams), [Motorsports](https://www.reddit.com/r/motorsportsstreams/)
 * Reduce redundant GUI code
 * Support for acestream links and Kodi/SodaPlayer
 
