@@ -4,6 +4,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import java.io.*;
 import java.util.*;
+import java.util.function.Predicate;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Links {
@@ -63,7 +65,14 @@ public class Links {
             
             allLinks.stream().filter((t) -> (t.parent().parent().parent().parent().parent().className().contains("Comment")));
 
-            allLinks.stream().map((h) -> h.attr("abs:href")).filter((httpHref) -> (!(httpHref.contains("https://www.reddit.com") || httpHref.contains("https://discord") || httpHref.contains("https://time.is") || httpHref.matches("(http://www.timebie.com)(.*)") || httpHref.matches("((https://)||(http://))(.*)reddit(.*)(.com)(.*)")))).forEachOrdered((httpHref) -> {
+            //allLinks.stream().filter((Element t) -> t.parent().parent().parent().parent().parent().className().contains("Comment"));
+//            for(Element e : allLinks){
+//                String httpHref = e.attr("abs:href");
+//                if(!(httpHref.contains("https://www.reddit.com") || httpHref.contains("https://discord") || httpHref.contains("https://time.is") || httpHref.matches("(((https)||(http))://image.prntscr.com(.*))") || httpHref.matches("((https)||(http)://i.imgur.com(.*))") || httpHref.matches("(http://www.timebie.com)(.*)") || httpHref.matches("((https://)||(http://))(.*)reddit(.*)(.com)(.*)"))){
+//                    eachLink.add(httpHref);
+//                }
+//            }
+            allLinks.stream().map((h) -> h.attr("abs:href")).filter((httpHref) -> (!(httpHref.contains("https://www.reddit.com") || httpHref.contains("https://discord") || httpHref.contains("https://time.is") || httpHref.matches("(((https)||(http))://image.prntscr.com(.*))") || httpHref.matches("((https)||(http)://i.imgur.com(.*))") || httpHref.matches("(http://www.timebie.com)(.*)") || httpHref.matches("((https://)||(http://))(.*)reddit(.*)(.com)(.*)")))).forEachOrdered((httpHref) -> {
                 eachLink.add(httpHref);
             });
         }catch(IOException e){
