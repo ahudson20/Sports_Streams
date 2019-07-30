@@ -8,9 +8,9 @@
 * [NFL](https://www.reddit.com/r/nflstreams/)
 * [NHL](https://www.reddit.com/r/NHLStreams/)
 * [NCAA Basketball](https://www.reddit.com/r/ncaaBBallStreams/)
-* BROKEN: [MMA](https://www.reddit.com/r/MMAStreams/)
-* BROKEN: Updated: [Football](https://www.reddit.com/r/redsoccer/), https://www.footybite.com/
-* BROKEN: [Cricket](https://www.reddit.com/r/cricketstreams/)~~ Updated??: https://www.reddit.com/r/InsectsEnthusiasts
+* ~~[MMA](https://www.reddit.com/r/MMAStreams/)~~
+* ~~Updated: [Football](https://www.reddit.com/r/redsoccer/), https://www.footybite.com/~~
+* ~~[Cricket](https://www.reddit.com/r/cricketstreams/)~~ Updated??: https://www.reddit.com/r/InsectsEnthusiasts
 * [Rugby](https://www.reddit.com/r/rugbystreams/)
 
 ## TODO
